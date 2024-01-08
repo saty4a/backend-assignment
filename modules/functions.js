@@ -10,7 +10,7 @@ export const uploadImageDetails = async (request, response, next) => {
     if (place === null) {
       const placeImage = await new imageModel({
         place: request.body.place,
-        imageUrl: `http://127.0.0.1:5000/Images/${request.file.filename}`,
+        imageUrl: `http://localhost:5000/Images/${request.file.filename}`,
         imageName: request.file.filename,
       }).save();
       if (placeImage?._id) {
@@ -30,7 +30,7 @@ export const uploadImageDetails = async (request, response, next) => {
         {
           $set: {
             place: request.body.place,
-            imageUrl: `http://127.0.0.1:5000/Images/${request.file.filename}`,
+            imageUrl: `http://localhost:5000/Images/${request.file.filename}`,
             imageName: request.file.filename,
           },
         },
